@@ -1,0 +1,24 @@
+appId: com.starlightatlas.gift
+productName: Starlight Atlas
+copyright: Curated by hand
+directories:
+  output: release
+  buildResources: build
+files:
+  - dist/**/*
+  - electron/**/*
+  - package.json
+win:
+  target:
+    - target: portable
+      arch:
+        - x64
+    - target: nsis
+      arch:
+        - x64
+portable:
+  artifactName: Starlight-Atlas-Portable.exe
+nsis:
+  oneClick: true
+  perMachine: false
+  artifactName: Starlight-Atlas-Setup.exe

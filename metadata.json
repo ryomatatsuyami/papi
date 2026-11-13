@@ -1,0 +1,8 @@
+{
+  "name": "The BTech Boy Map",
+  "description": "A cozy, romantic floating-island gift journey curating free open-source study and future developer tools for a first-year Computer Science student.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

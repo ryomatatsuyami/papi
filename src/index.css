@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Quicksand", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  :root {
+    --sky-canvas: #fdf8f5;
+    --sky-mist: #eef3fa;
+    --cottage-surface: #fffdfb;
+    --cottage-border: #e6d8d4;
+    --ink-primary: #352931;
+    --ink-muted: #6e5d67;
+    --accent-rose: #d96b86;
+    --accent-rose-soft: #fae6eb;
+    --accent-sage: #5c9479;
+    --accent-gold: #d9a44e;
+  }
+
+  html,
+  body {
+    background-color: var(--sky-canvas);
+    color: var(--ink-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    text-wrap: balance;
+  }
+}
+
+@keyframes floatGentle {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes cloudDrift {
+  0%,
+  100% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(18px);
+  }
+}
+
+@keyframes walkBounce {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(2deg);
+  }
+}
+
+@keyframes heartGlowPulse {
+  0% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0px rgba(217, 107, 134, 0));
+  }
+  40% {
+    transform: scale(1.16);
+    filter: drop-shadow(0 0 14px rgba(217, 107, 134, 0.72));
+  }
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 5px rgba(217, 107, 134, 0.25));
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float-gentle {
+  animation: floatGentle 4.8s ease-in-out infinite;
+}
+
+.animate-cloud-drift {
+  animation: cloudDrift 14s ease-in-out infinite;
+}
+
+.animate-walk-bounce {
+  animation: walkBounce 0.45s ease-in-out infinite;
+}
+
+.animate-heart-glow {
+  animation: heartGlowPulse 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-gentle,
+  .animate-cloud-drift,
+  .animate-walk-bounce,
+  .animate-heart-glow {
+    animation: none !important;
+  }
+}
